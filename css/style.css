@@ -143,7 +143,10 @@ body {
 }
 
 .toolbar .header-icons a {
+  display: flex;
   color:  #fff;
+  text-decoration: none;
+  align-items: center;
 }
 
 .toolbar .header-icons a:after {
