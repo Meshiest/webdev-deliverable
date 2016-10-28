@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic');
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(MaterialIcons-Regular.woff2) format('woff2'),
+       url(MaterialIcons-Regular.woff) format('woff'),
+       url(MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #F5F5F5;
+}
+
+.flex {
+  flex-grow: 1;
+}
+
+.align {
+  display: flex;
+}
+
+.align.horizontal {
+  flex-direction: horizontal;
+  align-items: stretch;
+}
+
+.sidenav {
+  z-index: 5;
+  width: 240px;
+  align-self: stretch;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6)
+}
+
+.sidenav header {
+  background: #B71C1C;
+  color: #fff;
+
+  height: 100px;
+  padding: 8px;
+  display: flex;
+  flex-direction: vertical;
+  align-items: flex-end;
+}
+
+.sidenav header h3 {
+  font-weight: normal;
+}
+
+.sidenav .content ul {
+  list-style: none;
+}
+
+.sidenav .content li a {
+  display: flex;
+  flex-direction: horizontal;
+  padding: 8px;
+  background-color: #fff;
+  transition: background-color 0.5s;
+  text-decoration: none;
+}
+
+.sidenav .content li a:hover {
+  background-color: #ddd;
+}
+
+.sidenav .content li a i {
+  color: #B71C1C;
+  padding: 4px;
+}
+
+.sidenav .content li a .list-title {
+  color: #222;
+  padding: 8px;
+  margin-left: 16px;
+}
+
+.toolbar {
+  display: flex;
+  background-color: #D32F2F;
+  align-self: stretch;
+  color: #fff;
+  height: 60px;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.toolbar.mini {
+  width: 100% auto;
+  height: 40px;
+  box-shadow: none;
+}
+
+.toolbar.mini h3 {
+  flex-grow: 1;
+}
+
+.toolbar .header-icons {
+  margin-right: 16px;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.toolbar .header-icons a {
+  color:  #fff;
+}
+
+.toolbar .header-icons a:after {
+  position: absolute;
+  pointer-events: none;
+  content: attr(title);
+  text-align: center;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  border-radius: 4px;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.5s;
+}
+
+.toolbar .header-icons a:hover:after {
+  transform: scale(1);
+  top: -20px;
+  opacity: 1;
+}
+
+.toolbar h3 {
+  align-self: center;
+  font-weight: normal;
+  padding: 4px;
+  margin-left: 16px;
+}
+
+.layout-padding {
+  padding: 8px;
+}
+
+.restaurant:not(:target) {
+  display: none;
+  padding: 4px;
+}
+
+#restaurant-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  max-height: calc(100vh - 90px);
+}
+
+.container {
+  display: block;
+  flex-grow: 1;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.rating {
+  color: #E64A19;
+  display: flex;
+  align-items: center;
+}
+
+.rating .score {
+  padding: 4px;
+  font-size: 20px;
+}
+
+.rating .stars {
+  padding: 4px;
+}
+
+.icon-pair {
+  display: flex;
+  align-items: center;
+}
+
+.icon-pair .text {
+  margin-left: 4px;
+  padding: 4px;
+}
+
+.details {
+  display: flex;
+  flex-direction: horizontal;
+  justify-content: space-between;
+}
+
+.details .information {
+  width:  400px;
+}
+
+.details .image img {
+  display: flex;
+  position: relative;
+  height: 200px;
+  object-fit: cover;
+}
+
+#instructions {
+  z-index: -1;
+  position: fixed;
+  margin: 32px;
+
+  text-align: center;
+  font-size: 32px;
+
+  color: #999;
+}
+
+.menu {
+  font-weight: normal;
+  padding: 16px;
+  border-bottom: thin solid #ddd;
+}
+
+.menu-list {
+  padding: 4px;
+  list-style: none;
+}
+
+.menu-list li {
+  padding: 4px;
+}
+
+.menu-sub-list {
+  margin-left: 16px;
+}
+
+.menu-sub-list li {
+  font-size: 12px;
+}
