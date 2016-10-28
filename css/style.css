@@ -277,6 +277,7 @@ body {
 }
 
 ul.columns-2 {
+  margin-left: 0;
   columns: 2;
   list-style-position: inside;
 }
