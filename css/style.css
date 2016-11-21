@@ -281,3 +281,89 @@ ul.columns-2 {
   columns: 2;
   list-style-position: inside;
 }
+
+@media screen and (max-width: 1150px) {
+  .sidenav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    height: 100vh;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.6);
+    transition: transform 0.5s, box-shadow 0.5s;
+  }
+
+  .sidenav::after {
+    position: fixed;
+    color: #fff;
+    top: 0;
+    font-size: 24px;
+    padding: 1em;
+    left: 100%;
+    font-family: 'Material Icons';
+    content: '\e5d2';
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .sidenav:hover::after {
+    color: rgba(0, 0, 0, 0);
+  }
+
+  .sidenav .content::after {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100vw;
+    height: 100vh;
+    content: ' ';
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.5s;
+  }
+
+  .sidenav:hover .content::after {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  #topbar {
+    padding-left: 3em;
+  }
+
+  .sidenav:hover {
+    transform: translateX(0%);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  }
+
+  body div.flex.vertical {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 875px) {
+  .details {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+  }
+
+  .details .information {
+    width: 100%;
+  }
+
+  .header-icons a {
+    font-size: 0px;
+  }
+  .header-icons i {
+    font-size: 24px;
+  }
+
+  .details .image img {
+    display: flex;
+    height: auto;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+}
