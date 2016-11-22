@@ -55,6 +55,12 @@
               <div class='list-title'>Message Admins</div>
             </a>
           </li>
+          <li>
+            <a href='#about'>
+              <i class='material-icons'>settings</i>
+              <div class='list-title'>About</div>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -66,8 +72,6 @@
 
         <div id='instructions'>
           <p>Select a restaurant on the left to begin!</p>
-          <br/>
-          <p>This is a website built to aid Stevens Students in the most difficult decision of their daily lives. That is, lunch, dinner, or breakfast. Built with the blood, sweat, and tears of the software developers in team 4: Isaac Hirschfeld, Michael Manis, Chris Paldino, Calvin Han, Tarin Nuamcharoen. </p>
         </div>
 
         <div id='benny' class='restaurant'>
@@ -535,9 +539,43 @@
                     </div>
                   </div>
 
+                  <div class='input-container'>
+                    <select name="year" required="required">
+                      <option value="freshman">Freshman</option>
+                      <option value="sophmore">Sophmore</option>
+                      <option value="junior">Junior</option>
+                      <option value="senior">Senior</option>
+                      <option value="seniorplus">Senior+</option>
+                    </select>
+                    <div class='effects'>
+                      <label for='year'>Year</label>
+                    </div>
+                  </div>
+
+                  <div class='input-container'>
+                    Experience with Website: <br/>
+                    <input type="radio" name="rating" value="like" id='like-check'>
+                    <input type="radio" name="rating" value="dislike" id='dislike-check'>
+                  </div>
+                  <br/>
+
                   <input class='material-button' type="submit" name="Submit"/>
                   <input class='material-button' type="reset" name="Reset"/>
                 </form>
+              </div>
+            </section>
+          </section>
+        </div>
+
+        <div id='about' class='restaurant'>
+          <section class="container">
+            <div class="toolbar mini">
+              <h3 class='flex'>About</h3>
+            </div>
+            <section class='details'>
+              <div class='information layout-padding'>
+                <p>This is a website built to aid Stevens Students in the most difficult decision of their daily lives. That is, lunch, dinner, or breakfast. Built with the blood, sweat, and tears of the software developers in team 4: Isaac Hirschfeld, Michael Manis, Chris Paldino, Calvin Han, Tarin Nuamcharoen.
+                </p>
               </div>
             </section>
           </section>

@@ -379,7 +379,9 @@ ul.columns-2 {
   position: relative;
 }
 
-.input-container input[type='text'] {
+.input-container input[type='text'],  .input-container select {
+  display: block;
+  width: 100%;
   outline: none;
   border: none;
   padding: 4px;
@@ -412,24 +414,101 @@ ul.columns-2 {
   content: ' ';
   position: absolute;
   bottom: 3px;
+  left: 4px;
+  background-color: blue;
+  width: 0;
+  margin: auto;
+  height: 2px;
+  transition: width 0.2s;
+}
+
+.input-container input[type='text']:focus+.effects::after {
+  width: 100%;
+}
+
+.input-container select+.effects::after {
+  content: ' ';
+  position: absolute;
+  bottom: 3px;
   left: 50%;
   background-color: blue;
   width: 0;
   margin: auto;
   height: 2px;
-  transition: left 0.2s, width 0.2s;
+  transition: width 0.2s, left 0.2s;
 }
 
-.input-container input[type='text']:focus+.effects::after {
+.input-container select:focus+.effects::after {
   width: 100%;
   left: 0;
 }
 
+.input-container select+.effects label {
+  position: absolute;
+  top: 16px;
+  left: 4px;
+  padding: 4px;
+  color: #bbb;
+  font-size: 16px;
+  pointer-events: none;
+  transition: top 0.2s, font-size 0.2s, color 0.2s;
+}
+
+.input-container select:focus+.effects label {
+  color: blue;
+}
+
+.input-container select:focus+.effects label, .input-container select:valid+.effects label {
+  top:  2px;
+  font-size: 8px;
+}
+
+#like-check::before {
+  width: 24px;
+  height: 24px;
+  margin: 4px;
+  color: #999;
+  font-size: 24px;
+  font-family: 'Material Icons';
+  content: '\e8dc';
+  transition: color 0.2s;
+}
+
+#like-check:checked::before {
+  color: orangered;
+}
+
+#dislike-check:checked::before {
+  color: blue;
+}
+
+#dislike-check::before {
+  width: 24px;
+  height: 24px;
+  margin: 4px;
+  color: #999;
+  font-size: 24px;
+  font-family: 'Material Icons';
+  content: '\e8db';
+  transition: color 0.2s;
+}
+
+.input-container input[type='radio'] {
+  width: 0;
+}
+
+.input-container input[type='radio']:last-child {
+  margin-left: 24px;
+}
+
+
 .material-button {
   border: 0;
-  padding: 4px;
+  padding: 8px;
+  font-size: 14px;
   border-radius: 2px;
-  min-width: 60px;
+  min-width: 100px;
+  margin: 4px;
   text-transform: uppercase;
   color: #fff;
   background-color: #1E88E5;
