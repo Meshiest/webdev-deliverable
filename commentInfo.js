@@ -41,11 +41,11 @@ function initMap() {
           vicinity.innerHTML = place.vicinity;
           
           // show our loaded div
-          var loadDiv = document.querySelector("#" + divId + " #loadDiv");
+          var loadDiv = document.querySelector("#" + divId + " .loadDiv");
           loadDiv.style.display = "block";
           
           // review list
-          var reviewList = document.querySelector("#" + divId + " #loadDiv .reviews");
+          var reviewList = document.querySelector("#" + divId + " .loadDiv .reviews");
 
           // load all the reviews
           for(var i in place.reviews) {
@@ -77,7 +77,7 @@ function initMap() {
           }
 
           // photo list div
-          var photoList = document.querySelector("#" + divId + " #loadDiv .photos");
+          var photoList = document.querySelector("#" + divId + " .loadDiv .photos");
 
           // load all the photos
           for(var i in place.photos) {
