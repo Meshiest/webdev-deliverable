@@ -2,7 +2,7 @@
 <html lang='en-US'>
   <head>
     <title>Washington Street Wednesdays</title>
-    
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Isaac Hirschfeld, Michael Manis, Chris Paldino, Calvin Han, Tarin Nuamcharoen">
@@ -10,12 +10,13 @@
     <meta name="keywords" content="stevens,sit,washington st,washington,menu,food,cs146">
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
+    <script src='commentInfo.js'></script>
+    <script src='modal.js'></script>
   </head>
   <body class='align horizontal'>
     <div class="sidenav">
       <header>
-        <h3>Restaurants</h3>
+        <h3>Restaurants</h3>        
       </header>
       <div class='content'>
         <ul>
@@ -49,6 +50,18 @@
               <div class='list-title'>Flatbread Grill</div>
             </a>
           </li>
+          <li>
+            <a href='#comments'>
+              <i class='material-icons'>comment</i>
+              <div class='list-title'>Message Admins</div>
+            </a>
+          </li>
+          <li>
+            <a href='#about'>
+              <i class='material-icons'>settings</i>
+              <div class='list-title'>About</div>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -60,8 +73,9 @@
 
         <div id='instructions'>
           <p>Select a restaurant on the left to begin!</p>
-          <br/>
-          <p>This is a website built to aid Stevens Students in the most difficult decision of their daily lives. That is, lunch, dinner, or breakfast. Built with the blood, sweat, and tears of the software developers in team 4: Isaac Hirschfeld, Michael Manis, Chris Paldino, Calvin Han, Tarin Nuamcharoen. </p>
+          <div id='map'></div>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFENTpjA51NQ_UelZhRZU-XpOy84QeNCU&libraries=places&callback=initMap"></script>
+
         </div>
 
         <div id='benny' class='restaurant'>
@@ -149,9 +163,21 @@
                       <li>Vegetable</li>
                     </ul>
                   </li>
-
                 </ul>
 
+
+                <div id='loadDiv' style='display: none;'>
+                  <h2 class='menu'>Reviews</h2>
+                  <div class='reviews'>
+                  </div>
+                  <h2 class='menu'>Photos</h2>
+                  <div class='photos'>
+                  </div>
+                </div>
+
+                <h2 class='menu'>Map</h2>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12091.23529597749!2d-74.029153!3d40.744232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259df9d1a0e11%3A0x86af09b7f71e5a02!2sBenny+Tudino&#39;s!5e0!3m2!1sen!2sus!4v1480633596492" class='map' frameborder="0" style="border:0" allowfullscreen></iframe>
               </div>
 
               <div class='image'>
@@ -200,7 +226,7 @@
                     Wednesday 6AM-10PM
                   </span>
                 </div>
-                  
+
                 <div class='icon-pair'>
                   <i class='material-icons'>link</i>
                   <a target='_blank' href='http://www.stacksofhoboken.com'>
@@ -208,9 +234,9 @@
                     </span>
                   </a>
                 </div>
-                
+
                 <h2 class='menu'>Menu (Select One)</h2>
-                
+
                 <ul class='menu-list'>
                   <li>Any Light &amp; Fluffy Pancakes
                     <ul class='menu-sub-list columns-2'>
@@ -253,6 +279,20 @@
                   </li>
                   <li>Chicken Breast Tenders or Loaded Nachos</li>
                 </ul>
+
+
+                <div id='loadDiv' style='display: none;'>
+                  <h2 class='menu'>Reviews</h2>
+                  <div class='reviews'>
+                  </div>
+                  <h2 class='menu'>Photos</h2>
+                  <div class='photos'>
+                  </div>
+                </div>
+
+                <h2 class='menu'>Map</h2>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.886379334625!2d-74.03185538418643!3d40.742525579328664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259dff9fa7d3d%3A0xe3642339b16d449f!2sStacks+Pancake+House+%26+Cafe!5e0!3m2!1sen!2sus!4v1480633559730" class='map' frameborder="0" style="border:0" allowfullscreen></iframe>
               </div>
 
               <div class='image'>
@@ -273,7 +313,7 @@
                 </a>
               </div>
             </div>
- 
+
             <section class='details'>
               <div class='information layout-padding'>
                 <div class='rating'>
@@ -288,35 +328,35 @@
                   <i class='material-icons'>star_half</i>
                   </span>
                 </div>
- 
+
                 <div class='icon-pair'>
                   <i class='material-icons'>place</i>
                   <span class='text'>
                     100 Hudson St, Hoboken, NJ 07030
                   </span>
                 </div>
- 
+
                 <div class='icon-pair'>
                   <i class='material-icons'>access_time</i>
                   <span class='text'>
                     Wednesday 8AM–3AM
                   </span>
                 </div>
- 
+
                 <div class='icon-pair'>
                   <i class='material-icons'>restaurant_menu</i>
                   <span class='text'>
                     <a href='https://hanselngriddlehoboken.foodtecsolutions.com/menu'>Order Online</a>
                   </span>
                 </div>
-               
+
                 <div class='icon-pair'>
                   <i class='material-icons'>link</i>
                   <span class='text'>
                     <a href='https://hanselngriddle.com'>hanselngriddle.com</a>
                   </span>
                 </div>
-               
+
                 <h2 class = 'menu'> Menu (Select One)</h2>
                 <ul class = 'menu-list'>
                   <li> Choose Any
@@ -335,8 +375,22 @@
                   <li> Popcorn Buffalo Wrap</li>
                   <li> Philly/Chicken CheeseSteak</li>
                 </ul>
+
+
+                <div id='loadDiv' style='display: none;'>
+                  <h2 class='menu'>Reviews</h2>
+                  <div class='reviews'>
+                  </div>
+                  <h2 class='menu'>Photos</h2>
+                  <div class='photos'>
+                  </div>
+                </div>
+
+                <h2 class='menu'>Map</h2>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.118090309975!2d-74.0323084841866!3d40.73742697932916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259e1fdf00edd%3A0x2e5403c3fcba2f7a!2sHansel+&#39;n+Griddle!5e0!3m2!1sen!2sus!4v1480633632389" class='map' frameborder="0" style="border:0" allowfullscreen></iframe>
               </div>
- 
+
               <div class='image'>
                 <img src='images/hansel.jpg' alt='sandwich'/>
               </div>
@@ -411,103 +465,212 @@
                 <li>Fish Sandwich with Reg. Fries</li>
                 <li>Large Specialty Fries with Large Drink or 16oz Milkshake and Fried Oreos</li>
               </ul>
+
+              <div id='loadDiv' style='display: none;'>
+                <h2 class='menu'>Reviews</h2>
+                <div class='reviews'>
+                </div>
+                <h2 class='menu'>Photos</h2>
+                <div class='photos'>
+                </div>
+              </div>
+
+              <h2 class='menu'>Map</h2>
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.672307404482!2d-74.03043578418645!3d40.74723557932798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259d8c8bf311d%3A0x3414e03c6aa5ac6a!2sBoardwalk+Fresh+Burgers+and+Fries!5e0!3m2!1sen!2sus!4v1480633665753" class='map' frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
             <div class='image'>
               <img src='images/burger.jpg' alt='Picture of Burger from Boardwalk' />
             </div>
           </section>
-        </section>
-      </div>
+          </section>
+        </div>
 
-      <div id='flatbread' class='restaurant'>
+        <div id='flatbread' class='restaurant'>
+          <section class="container">
+            <div class="toolbar mini">
+              <h3 class='flex'>Flatbread Grill</h3>
+              <div class='header-icons'>
+                <a href='tel:1-201-659-6560' title="Call">
+                  <i class='material-icons'>phone</i>
+                  (201) 659-6560
+                </a>
+              </div>
+            </div>
+
+            <section class='details'>
+              <div class='information layout-padding'>
+                <div class='rating'>
+                  <span class='score'>
+                    4.2
+                  </span>
+                  <span class='stars'>
+                  <i class='material-icons'>star</i>
+                  <i class='material-icons'>star</i>
+                  <i class='material-icons'>star</i>
+                  <i class='material-icons'>star</i>
+                  <i class='material-icons'>star_half</i>
+                  </span>
+                </div>
+
+                <div class='icon-pair'>
+                  <i class='material-icons'>place</i>
+                  <span class='text'>
+                    517 Washington St, Hoboken, NJ 07030
+                  </span>
+                </div>
+
+                <div class='icon-pair'>
+                  <i class='material-icons'>access_time</i>
+                  <span class='text'>
+                    Wednesday 11:30AM–10PM
+                  </span>
+                </div>
+
+                <div class='icon-pair'>
+                  <i class='material-icons'>restaurant_menu</i>
+                  <span class='text'>
+                    <a href='https://orders.flatbreadgrill.com/'>Order Online</a>
+                  </span>
+                </div>
+
+               <div class='icon-pair'>
+                  <i class='material-icons'>link</i>
+                  <span class='text'>
+                    <a href='http://flatbreadgrill.com/'>flatbreadgrill.com</a>
+                  </span>
+                </div>
+
+              <h2 class='menu'>Menu (Select One)</h2>
+
+               <ul class='menu-list'>
+                <li>Choose a Melt and One Side
+                  <ul class='menu-sub-list'>
+                   <li>Chicken Pesto</li>
+                   <li>Mozarella Tomato</li>
+                   <li>Steak N' Cheddar</li>
+                   <li>Chicken Chipotle</li>
+                   <li>Choose a Side: <i>Shepherd Salad, Chickpea Salad, French Fries</i></li>
+                 </ul>
+                </li>
+
+                 <li>OR a Mini Flat-Top Platter
+                   <ul class='menu-sub-list'>
+                    <li>Choose a Side: <i>Shepherd Salad, Chickpea Salad, French Fries</i></li>
+                    <li>Choose a Rice: <i>White Rice, Cracked Wheat</i></li>
+                    <li>Choose a Sauce: <i>Yogurt Cucumber, Red Hot, Green Tahini</i></li>
+                    <li>Choose a Bread: <i>Original Piatta, Whole Wheat Piatta</i></li>
+                   </ul>
+                  </li>
+
+                 <li>All exchanges come with a fountain drink</li>
+               </ul>
+
+
+               <div id='loadDiv' style='display: none;'>
+                 <h2 class='menu'>Reviews</h2>
+                 <div class='reviews'>
+                 </div>
+                 <h2 class='menu'>Photos</h2>
+                 <div class='photos'>
+                 </div>
+               </div>
+
+               <h2 class='menu'>Map</h2>
+
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.876330682494!2d-74.0311963841865!3d40.74274667932862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2ffe5f91b4d2b%3A0xaa1abe328f46878!2sFlatbread+Grill!5e0!3m2!1sen!2sus!4v1480633697977" class='map' frameborder="0" style="border:0" allowfullscreen></iframe>
+             </div>
+
+             <div class='image'>
+               <img src='images/flatbread_platter.jpg' alt='Picture of platter'/>
+             </div>
+            </section>
+          </section>
+        </div>
+
+        <div id='comments' class='restaurant'>
+          <section class="container">
+            <div class="toolbar mini">
+              <h3 class='flex'>Message the Admin</h3>
+            </div>
+
+            <section class='details'>
+              <div class='layout-padding'>
+                <form action='javascript:showModal()' method='post'>
+                  <div class='input-container'>
+                    <input type="text" required='required' name="name" />
+                    <div class='effects'>
+                      <label>Name</label>
+                    </div>
+                  </div>
+                  <div class='input-container'>
+                    <input type="text" required='required' name="email" />
+                    <div class='effects'>
+                      <label>Email</label>
+                    </div>
+                  </div>
+
+                  <div class='input-container'>
+                    <select name="year" required="required">
+                      <option value="">Year</option>
+                      <option value="freshman">Freshman</option>
+                      <option value="sophmore">Sophmore</option>
+                      <option value="junior">Junior</option>
+                      <option value="senior">Senior</option>
+                      <option value="seniorplus">Senior+</option>
+                    </select>
+                    <div class='effects'>
+                      <label>Year</label>
+                    </div>
+                  </div>
+
+                  <div class='input-container'>
+                    Experience with Website: <br/>
+                    <input type="radio" name="rating" value="like" id='like-check'>
+                    <input type="radio" name="rating" value="dislike" id='dislike-check'>
+                  </div>
+                  <br/>
+
+                  <button class='material-button' type="submit" value="Submit">Submit</button>
+                  <button class='material-button' type="reset" value="Reset">Reset</button>
+                </form>
+              </div>
+            </section>
+          </section>
+        </div>
+
+        <div id='about' class='restaurant'>
+          <section class="container">
+            <div class="toolbar mini">
+              <h3 class='flex'>About</h3>
+            </div>
+            <section class='details'>
+              <div class='layout-padding'>
+                <p>This is a website built to aid Stevens Students in the most difficult decision of their daily lives. That is, lunch, dinner, or breakfast. Built with the blood, sweat, and tears of the software developers in team 4: Isaac Hirschfeld, Michael Manis, Chris Paldino, Calvin Han, Tarin Nuamcharoen.
+                </p>
+              </div>
+            </section>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal" class="modalContainer">
+      <div class='modal'>
         <section class="container">
           <div class="toolbar mini">
             <h3 class='flex'>Flatbread Grill</h3>
             <div class='header-icons'>
-              <a href='tel:1-201-659-6560' title="Call">
-                <i class='material-icons'>phone</i>
-                (201) 659-6560
-              </a>
+              <i onclick="hideModal()" class='material-icons icon-button'>close</i>
             </div>
           </div>
 
           <section class='details'>
-            <div class='information layout-padding'>
-              <div class='rating'>
-                <span class='score'>
-                  4.2
-                </span>
-                <span class='stars'>
-                <i class='material-icons'>star</i>
-                <i class='material-icons'>star</i>
-                <i class='material-icons'>star</i>
-                <i class='material-icons'>star</i>
-                <i class='material-icons'>star_half</i>
-                </span>
-              </div>
-
-              <div class='icon-pair'>
-                <i class='material-icons'>place</i>
-                <span class='text'>
-                  517 Washington St, Hoboken, NJ 07030
-                </span>
-              </div>
-
-              <div class='icon-pair'>
-                <i class='material-icons'>access_time</i>
-                <span class='text'>
-                  Wednesday 11:30AM–10PM
-                </span>
-              </div>
-
-              <div class='icon-pair'>
-                <i class='material-icons'>restaurant_menu</i>
-                <span class='text'>
-                  <a href='https://orders.flatbreadgrill.com/'>Order Online</a>
-                </span>
-              </div>
-            
-             <div class='icon-pair'>
-                <i class='material-icons'>link</i>
-                <span class='text'>
-                  <a href='http://flatbreadgrill.com/'>flatbreadgrill.com</a>
-                </span>
-              </div>
-
-            <h2 class='menu'>Menu (Select One)</h2>
-  
-             <ul class='menu-list'>
-              <li>Choose a Melt and One Side
-                <ul class='menu-sub-list'>
-                 <li>Chicken Pesto</li>
-                 <li>Mozarella Tomato</li>
-                 <li>Steak N' Cheddar</li>
-                 <li>Chicken Chipotle</li>
-                 <li>Choose a Side: <i>Shepherd Salad, Chickpea Salad, French Fries</i></li>
-               </ul>
-              </li>
-
-               <li>OR a Mini Flat-Top Platter
-                 <ul class='menu-sub-list'>
-                  <li>Choose a Side: <i>Shepherd Salad, Chickpea Salad, French Fries</i></li>
-                  <li>Choose a Rice: <i>White Rice, Cracked Wheat</i></li>
-                  <li>Choose a Sauce: <i>Yogurt Cucumber, Red Hot, Green Tahini</i></li>
-                  <li>Choose a Bread: <i>Original Piatta, Whole Wheat Piatta</i></li>
-                 </ul>
-                </li>
-    
-               <li>All exchanges come with a fountain drink</li>
-             </ul>
-           </div>
-
-           <div class='image'>
-             <img src='images/flatbread_platter.jpg' alt='Picture of platter'/>
-           </div>
+            <div class='modal-details layout-padding'>
+              Thanks for submitting something! We don't actually do anything with this information, we just wanted to show off some sexy css!
+            </div>
           </section>
         </section>
-      </div>
-        
-      </div>
     </div>
   </body>
 </html>

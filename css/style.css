@@ -66,10 +66,10 @@ body {
 
 .sidenav {
   z-index: 5;
-  width: 240px;
+  width: 240px !important;
   align-self: stretch;
   background: #fff;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6)
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
 .sidenav header {
@@ -85,6 +85,11 @@ body {
 
 .sidenav header h3 {
   font-weight: normal;
+}
+
+.sidenav .content {
+  height: calc(100vh - 116px);
+  overflow-y: auto;
 }
 
 .sidenav .content ul {
@@ -229,15 +234,23 @@ body {
   display: flex;
   flex-direction: horizontal;
   justify-content: space-between;
+  position: relative;
+  transform: translate(0, 0);
 }
 
 .details .information {
-  width:  400px;
+  width:  100%;
+  box-sizing: border-box;
+}
+
+.details .image {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .details .image img {
   display: flex;
-  position: relative;
   height: 200px;
   object-fit: cover;
 }
@@ -280,6 +293,10 @@ ul.columns-2 {
   margin-left: 0;
   columns: 2;
   list-style-position: inside;
+}
+
+body div.flex.vertical {
+  width: calc(100vw - 240px);
 }
 
 @media screen and (max-width: 1150px) {
@@ -350,6 +367,7 @@ ul.columns-2 {
 
   .details .information {
     width: 100%;
+    margin-top: 200px;
   }
 
   .header-icons a {
@@ -366,4 +384,297 @@ ul.columns-2 {
     height: 200px;
     object-fit: cover;
   }
+
+  .photos img {
+    height: auto;
+    width: 100%;
+    object-fit: none;
+  }
+}
+
+.input-container {
+  padding: 16px 4px 4px 4px;
+  background: transparent;
+  position: relative;
+}
+
+.input-container input[type='text'],  .input-container select {
+  display: block;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 4px;
+  font-size: 16px;
+  border-bottom: thin solid grey;
+  background: transparent;
+}
+
+.input-container input[type='text']+.effects label {
+  position: absolute;
+  top: 16px;
+  left: 4px;
+  padding: 4px;
+  color: #bbb;
+  font-size: 16px;
+  pointer-events: none;
+  transition: top 0.2s, font-size 0.2s, color 0.2s;
+}
+
+.input-container input[type='text']:focus+.effects label {
+  color: blue;
+}
+
+.input-container input[type='text']:focus+.effects label, .input-container input[type='text']:valid+.effects label {
+  top:  2px;
+  font-size: 8px;
+}
+
+.input-container input[type='text']+.effects::after {
+  content: ' ';
+  position: absolute;
+  bottom: 3px;
+  left: 4px;
+  background-color: blue;
+  width: 0;
+  margin: auto;
+  height: 2px;
+  transition: width 0.2s;
+}
+
+.input-container input[type='text']:focus+.effects::after {
+  width: 100%;
+}
+
+.input-container select+.effects::after {
+  content: ' ';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  background-color: blue;
+  width: 0;
+  margin: auto;
+  height: 2px;
+  transition: width 0.2s, left 0.2s;
+}
+
+.input-container select:focus+.effects::after {
+  width: 100%;
+  left: 0;
+}
+
+.input-container select+.effects label {
+  position: absolute;
+  top: 16px;
+  left: 4px;
+  padding: 4px;
+  color: #bbb;
+  font-size: 16px;
+  pointer-events: none;
+  transition: top 0.2s, font-size 0.2s, color 0.2s;
+}
+
+.input-container select+.effects label {
+  top:  2px;
+  font-size: 8px;
+}
+
+.input-container select:focus+.effects label, .input-container select:valid+.effects label {
+  color: blue;
+}
+
+#like-check::before {
+  width: 24px;
+  height: 24px;
+  margin: 4px;
+  color: #999;
+  font-size: 24px;
+  font-family: 'Material Icons';
+  content: '\e8dc';
+  transition: color 0.2s;
+}
+
+#like-check:checked::before {
+  color: orangered;
+}
+
+#dislike-check:checked::before {
+  color: blue;
+}
+
+#dislike-check::before {
+  width: 24px;
+  height: 24px;
+  margin: 4px;
+  color: #999;
+  font-size: 24px;
+  font-family: 'Material Icons';
+  content: '\e8db';
+  transition: color 0.2s;
+}
+
+.input-container input[type='radio'] {
+  width: 0;
+}
+
+.input-container input[type='radio']:last-child {
+  margin-left: 24px;
+}
+
+
+.material-button {
+  border: 0;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 2px;
+  min-width: 100px;
+  margin: 4px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #1E88E5;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.material-button:hover {
+  background-color: #2196F3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.material-button:active {
+  background-color: #42A5F5;
+}
+
+.modalContainer {
+    display: none;
+    position: fixed;
+    z-index: 6;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.4);
+    flex-direction: columns;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+  color: white;
+  display: block;
+  width: 300px;
+}
+
+.modal header {
+  background-color:#b71c1c;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.modal header h3 {
+  font-family: 'Roboto';
+  font-weight: 300;
+  padding: 4px;
+}
+
+.modal-details {
+  color: #000;
+}
+
+.icon-button {
+  border-radius: 50%;
+  padding: 4px;
+  margin-right: -4px;
+  transition: background-color 0.2s;
+}
+
+.icon-button:hover {
+  cursor:pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.fadeIn {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.fadeOut {
+  animation: fadeOut 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#map {
+  display: none;
+}
+
+.map {
+  width: 100%;
+  height: 200px;
+}
+
+.review {
+  display: flex;
+  flex-direction: row;
+  padding: 4px;
+}
+
+.review .text {
+  padding: 8px;
+  margin: 4px;
+  font-weight: 200;
+  font-size: 14px;
+}
+
+.review:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+.review .postMeta {
+  font-size: 12px;
+}
+
+.review .rating {
+  display: inline-block;
+}
+
+.review a {
+  text-decoration: none;
+}
+
+.review a:hover {
+  text-decoration: underline;
+}
+
+.review img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 8px;
+}
+
+.photos {
+  text-align: center;
+}
+
+.photos img {
+  height: 200px;
+  object-fit: contain;
 }
