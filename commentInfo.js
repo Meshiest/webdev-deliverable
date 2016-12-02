@@ -24,7 +24,6 @@ function initMap() {
     service.getDetails({placeId: placeId},
       function (place, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
-          console.log(divId, place);
 
           // update the numerical score
           var ratingScore = document.querySelector("#" + divId + " .rating .score");
