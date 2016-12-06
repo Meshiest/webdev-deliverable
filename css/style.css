@@ -60,7 +60,7 @@ body {
 }
 
 .align.horizontal {
-  flex-direction: horizontal;
+  flex-direction: row;
   align-items: stretch;
 }
 
@@ -79,7 +79,7 @@ body {
   height: 100px;
   padding: 8px;
   display: flex;
-  flex-direction: vertical;
+  flex-direction: row;
   align-items: flex-end;
 }
 
@@ -98,7 +98,7 @@ body {
 
 .sidenav .content li a {
   display: flex;
-  flex-direction: horizontal;
+  flex-direction: row;
   padding: 8px;
   background-color: #fff;
   transition: background-color 0.5s;
@@ -131,7 +131,7 @@ body {
 }
 
 .toolbar.mini {
-  width: 100% auto;
+  width: auto;
   height: 40px;
   box-shadow: none;
 }
@@ -232,7 +232,7 @@ body {
 
 .details {
   display: flex;
-  flex-direction: horizontal;
+  flex-direction: row;
   justify-content: space-between;
   position: relative;
   transform: translate(0, 0);
@@ -554,7 +554,7 @@ body div.flex.vertical {
     height: 100vh;
     overflow: hidden;
     background-color: rgba(0,0,0,0.4);
-    flex-direction: columns;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
